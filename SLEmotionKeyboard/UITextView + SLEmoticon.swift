@@ -46,6 +46,9 @@ extension UITextView {
             //恢复光标位置在表情后面
             selectedRange = NSMakeRange(range.location + 1, 0)
             
+            //输入表情使其自动触发textViewDidChange方法
+            delegate?.textViewDidChange!(self)
+            
         }
     }
     
